@@ -1,52 +1,51 @@
 {
-  "name": "drummer",
+  "name": "name",
   "version": "0.0.1",
-  "description": "React app with drums simulation",
-  "main": "dist/drummer.tsx",
-  "dependencies": {
-    "eslint-plugin-jest": "^23.8.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+  "description": "React app with name simulation",
+  "main": "dist/name.tsx",
+  "engines": {
+    "node": ">=10.0.0"
   },
+  "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^25.2.1",
-    "@types/react": "^16.9.32",
-    "@types/react-dom": "^16.9.6",
-    "@typescript-eslint/parser": "^2.26.0",
-    "awesome-typescript-loader": "^5.2.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-typescript": "^0.14.0",
+    "eslint-plugin-jest": "^23.8.2",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.0.4",
     "jest": "^25.2.7",
+    "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
-    "standardx": "^5.0.0",
-    "ts-jest": "^25.3.1",
-    "typescript": "^3.8.3",
+    "sass-loader": "^8.0.2",
+    "standard": "^14.3.3",
+    "style-loader": "^1.1.3",
     "url-loader": "^4.0.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3",
-    "css-loader": "^3.4.2",
-    "html-loader": "^1.1.0",
-    "mini-css-extract-plugin": "^0.9.0",
-    "sass-loader": "^8.0.2",
-    "style-loader": "^1.1.3"
+    "webpack-dev-server": "^3.10.3"
   },
   "scripts": {
     "start:dev": "webpack-dev-server --env=local",
     "test": "jest",
-    "codestyle-typescript-check": "standardx --parser @typescript-eslint/parser --plugin typescript \"src/**/*.ts\" \"src/**/*.tsx\" \"__tests__/**/*.ts\" \"__tests__/**/*.tsx\"",
-    "codestyle-typescript-fix": "standardx --parser @typescript-eslint/parser --plugin typescript \"src/**/*.ts\" \"src/**/*.tsx\" \"__tests__/**/*.ts\" \"__tests__/**/*.tsx\" --fix"
+    "codestyle-check": "standard \"src/**/*.ts\" \"src/**/*.tsx\" \"__tests__/**/*.ts\" \"__tests__/**/*.tsx\"",
+    "codestyle-fix": "standard \"src/**/*.ts\" \"src/**/*.tsx\" \"__tests__/**/*.ts\" \"__tests__/**/*.tsx\" --fix",
+    "build:dev": "webpack --mode=development --watch",
+    "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wojtazik/drummer.git"
+    "url": "git+https://github.com/USER/name.git"
   },
-  "author": "Patryk Wojtas",
+  "author": "----",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/wojtazik/drummer/issues"
+    "url": "https://github.com/USER/name/issues"
   },
-  "homepage": "https://github.com/wojtazik/drummer#readme"
+  "homepage": "https://github.com/USER/name#readme"
 }
