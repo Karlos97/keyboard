@@ -1,38 +1,52 @@
 {
-  "name": "name",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "watch:sass": "node-sass src/sass/main.scss dist/css/style.css -w",
-    "compile:sass": "node-sass src/sass/main.scss dist/css/style.comp.css",
-    "concat:css": "concat -o dist/css/style.concat.css dist/css/icon-font.css dist/css/style.comp.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 5 versions' css/style.concat.css -o css/style.prefix.css",
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
-    "autoprefixer": "^9.7.4",
-    "babel-install": "2.1.0",
-    "babel-loader": "^8.0.6",
-    "concat": "^1.0.3",
-    "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.13.1",
-    "postcss-cli": "^7.1.0",
-    "sass-loader": "^8.0.2",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.8.2"
-  },
+  "name": "drummer",
+  "version": "0.0.1",
+  "description": "React app with drums simulation",
+  "main": "dist/drummer.tsx",
   "dependencies": {
-    "axios": "^0.19.0",
-    "babel-polyfill": "^6.26.0",
-    "fractional": "^1.0.0",
-    "uniqid": "^5.1.0"
-  }
+    "eslint-plugin-jest": "^23.8.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/react": "^16.9.32",
+    "@types/react-dom": "^16.9.6",
+    "@typescript-eslint/parser": "^2.26.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "html-webpack-plugin": "^4.0.4",
+    "jest": "^25.2.7",
+    "node-sass": "^4.13.1",
+    "standardx": "^5.0.0",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.8.3",
+    "url-loader": "^4.0.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "css-loader": "^3.4.2",
+    "html-loader": "^1.1.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3"
+  },
+  "scripts": {
+    "start:dev": "webpack-dev-server --env=local",
+    "test": "jest",
+    "codestyle-typescript-check": "standardx --parser @typescript-eslint/parser --plugin typescript \"src/**/*.ts\" \"src/**/*.tsx\" \"__tests__/**/*.ts\" \"__tests__/**/*.tsx\"",
+    "codestyle-typescript-fix": "standardx --parser @typescript-eslint/parser --plugin typescript \"src/**/*.ts\" \"src/**/*.tsx\" \"__tests__/**/*.ts\" \"__tests__/**/*.tsx\" --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wojtazik/drummer.git"
+  },
+  "author": "Patryk Wojtas",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/wojtazik/drummer/issues"
+  },
+  "homepage": "https://github.com/wojtazik/drummer#readme"
 }
