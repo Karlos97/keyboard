@@ -1,0 +1,12 @@
+{
+    "presets": [
+        ["@babel/preset-env", {//babel po upgrade do 7.0 zmienil nazwy
+            "targets": {
+                "browsers": [
+                    "last 5 versions",
+                    "ie >= 8"
+                ]
+            }
+        }]
+    ]
+}
