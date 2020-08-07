@@ -1,0 +1,65 @@
+.keyboard {
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  height: 50%;
+  width: 135rem;
+  
+  // [class^="button-"] {
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  // }
+  .n {
+    @include buttons_features;
+    width: calc((1 /#{$max-buttons-in-row}) * 70%);
+  
+  }
+  .b {
+    @include buttons_features;
+    width: calc(((1 /#{$max-buttons-in-row}) * 80%) * 1.5);
+  }
+  .row {
+    &-1 {
+      @include row_size;
+      top: 1rem;
+      left: 5rem;
+    }
+    &-2 {
+      @include row_size;
+      top: 7rem;
+      left: 13rem;
+    }
+    &-3 {
+      @include row_size;
+      top: 13rem;
+      left: 1.5rem;
+      .button-shift-el {
+        &-1 {
+          position: absolute;
+          top: 0 0;
+          transform: rotate(90deg);
+        }
+        &-2 {
+          position: absolute;
+          top: 0 0;
+          transform: rotate(90deg);
+        }
+      }
+    }
+    &-4 {
+      @include row_size;
+      top: 19rem;
+      left: 20rem;
+    }
+    &-5 {
+      @include row_size;
+      top: 25rem;
+      left: 40rem;
+      .button-spacebar{
+    @include buttons_features;
+    width: 50rem;
+      }
+    }
+  }
+}
