@@ -1,23 +1,30 @@
 .keyboard {
   position: absolute;
-  top: 25%;
-  left: 15%;
+  top: 15rem;
+  left: 45rem;
   height: 50%;
   width: 135rem;
-  
-  // [class^="button-"] {
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
-  // }
+
+  [class^="button-"] {
+    transform: translate(3.5rem, -1rem);
+  }
   .n {
     @include buttons_features;
     width: calc((1 /#{$max-buttons-in-row}) * 70%);
-  
+    font-size: $font-size;
+    color: $font-color;
   }
   .b {
     @include buttons_features;
-    width: calc(((1 /#{$max-buttons-in-row}) * 80%) * 1.5);
+    width: calc(((1 /#{$max-buttons-in-row}) * 80%) * 1.5);    font-size: $font-size+2rem;
+    color: $font-color;
+  }
+  .s {
+    @include buttons_features;
+    width: 50rem;    
+    font-size: $font-size;
+    color: $font-color;
+
   }
   .row {
     &-1 {
@@ -37,12 +44,14 @@
       .button-shift-el {
         &-1 {
           position: absolute;
-          top: 0 0;
-          transform: rotate(90deg);
+          top: -1rem ;
+          left:7rem;
+          transform: rotate(-90deg);
         }
         &-2 {
           position: absolute;
-          top: 0 0;
+          top: 0 ;
+          left:7.5rem;
           transform: rotate(90deg);
         }
       }
@@ -57,8 +66,11 @@
       top: 25rem;
       left: 40rem;
       .button-spacebar{
-    @include buttons_features;
-    width: 50rem;
+        height: 3rem;
+        width: 3rem;
+    transform: translate(24rem, -1rem) rotate(270deg);
+    // transform: rotate(90deg);
+
       }
     }
   }
