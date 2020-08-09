@@ -16,21 +16,28 @@
   }
   .b {
     @include buttons_features;
-    width: calc(((1 /#{$max-buttons-in-row}) * 80%) * 1.5);    font-size: $font-size+2rem;
+    width: calc(((1 /#{$max-buttons-in-row}) * 80%) * 1.5);
+    font-size: $font-size + 2rem;
     color: $font-color;
   }
   .s {
     @include buttons_features;
-    width: 50rem;    
+    width: 50rem;
     font-size: $font-size;
     color: $font-color;
-
   }
   .row {
     &-1 {
       @include row_size;
       top: 1rem;
       left: 5rem;
+      .button-b-arrow {
+        position: absolute;
+        top: -.5rem;
+        left: 101.5rem;
+        // font-size: 5rem;
+        width: 15rem;
+      }
     }
     &-2 {
       @include row_size;
@@ -41,18 +48,35 @@
       @include row_size;
       top: 13rem;
       left: 1.5rem;
-      .button-shift-el {
-        &-1 {
-          position: absolute;
-          top: -1rem ;
-          left:7rem;
-          transform: rotate(-90deg);
+      .button {
+        &-shift-el {
+          &-1 {
+            position: absolute;
+            font-size: 4rem;
+            top: -4.5rem;
+            left: 7rem;
+            transform: rotate(-90deg);
+          }
+          &-2 {
+            position: absolute;
+            font-size: 4rem;
+            top: -2.7rem;
+            left: 3.5rem;
+          }
+          &-3 {
+            clip-path: circle(50% at 50% 50%);
+            width: 1rem;
+            height: 1rem;
+            position: absolute;
+            top: 2.3rem;
+            left: 9.5rem;
+            background-color: #1ac740;
+          }
         }
-        &-2 {
+        &-e {
           position: absolute;
-          top: 0 ;
-          left:7.5rem;
-          transform: rotate(90deg);
+          top: -3rem;
+          left: 108.5rem;
         }
       }
     }
@@ -65,12 +89,11 @@
       @include row_size;
       top: 25rem;
       left: 40rem;
-      .button-spacebar{
+      .button-spacebar {
         height: 3rem;
         width: 3rem;
-    transform: translate(24rem, -1rem) rotate(270deg);
-    // transform: rotate(90deg);
-
+        transform: translate(24rem, -1rem) rotate(270deg);
+        // transform: rotate(90deg);
       }
     }
   }
