@@ -5,9 +5,14 @@
   height: 50%;
   width: 135rem;
 
-  [class^="button-"] {
-    transform: translate(3.5rem, -1rem);
-  }
+  [class^="button--"] {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+justify-content: center;
+align-items: center;
+}
   .n {
     @include buttons_features;
     width: calc((1 /#{$max-buttons-in-row}) * 70%);
@@ -19,6 +24,10 @@
     width: calc(((1 /#{$max-buttons-in-row}) * 80%) * 1.5);
     font-size: $font-size + 2rem;
     color: $font-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   .s {
     @include buttons_features;
@@ -27,72 +36,91 @@
     color: $font-color;
   }
   .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .tooltip {
+      position: absolute;
+      // position: relative;
+      // top: -4.8rem;
+      // left: 6.5rem;
+      background-color: $tooltip-color;
+      color: $font-color;
+      font-size: 1.6rem;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: 0.6rem;
+      z-index: 1;
+    }
+    .tooltip::after {
+      content: " ";
+      position: absolute;
+      // position: relative;
+      top: 100%;
+      left: 50%;
+      margin-left: 0.5rem;
+      border-width: 0.7rem;
+      border-style: solid;
+      border-color: $tooltip-color transparent transparent transparent;
+    }
     &-1 {
       @include row_size;
       top: 1rem;
       left: 5rem;
-      .button-b-arrow {
+      .button-b--arrow {
         position: absolute;
-        top: -.5rem;
-        left: 101.5rem;
-        // font-size: 5rem;
-        width: 15rem;
+        left: 116rem;
       }
     }
     &-2 {
       @include row_size;
       top: 7rem;
-      left: 13rem;
     }
     &-3 {
       @include row_size;
       top: 13rem;
-      left: 1.5rem;
       .button {
         &-shift-el {
-          &-1 {
+          &--1 {
             position: absolute;
-            font-size: 4rem;
-            top: -4.5rem;
-            left: 7rem;
+            top: -4.7rem;
+            left: 15rem;
             transform: rotate(-90deg);
           }
-          &-2 {
+          &--2 {
             position: absolute;
-            font-size: 4rem;
-            top: -2.7rem;
-            left: 3.5rem;
+            top: -3.8rem;
+            left: 15rem;
           }
-          &-3 {
+          &--3 {
             clip-path: circle(50% at 50% 50%);
             width: 1rem;
             height: 1rem;
             position: absolute;
-            top: 2.3rem;
-            left: 9.5rem;
+            top:1.3rem;
+            left: 22rem;
             background-color: #1ac740;
           }
         }
-        &-e {
+        &--e {
           position: absolute;
-          top: -3rem;
-          left: 108.5rem;
+          top: 1rem;
+          left: 122.5rem;
         }
       }
     }
     &-4 {
       @include row_size;
       top: 19rem;
-      left: 20rem;
     }
     &-5 {
       @include row_size;
       top: 25rem;
-      left: 40rem;
-      .button-spacebar {
+      .button--spacebar {
         height: 3rem;
         width: 3rem;
-        transform: translate(24rem, -1rem) rotate(270deg);
+        transform: translate(24rem, 2rem) rotate(270deg);
         // transform: rotate(90deg);
       }
     }

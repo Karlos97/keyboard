@@ -1,12 +1,12 @@
-@mixin row_size{
-    position: absolute;
-      height: 5rem;
-      width: 100%;
+@mixin row_size {
+  position: absolute;
+  height: 5rem;
+  width: 100%;
 }
-@mixin buttons_features{
-    height: 100%;
-    background-color: $buttons-color;
-    margin: 0.5rem 0.5rem;
-    float: left;
-    border-radius: 0.5rem;
+@mixin buttons_features {
+  height: 100%;
+  background-color: $buttons-color;
+  margin: .5rem;
+  // float: left;
+  border-radius: 0.5rem;
 }

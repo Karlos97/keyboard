@@ -7,7 +7,6 @@ var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 var { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = (env, argv) => {
-
   //sprawdza czy jesteśmy w trybie developerskim
   //na podstawie atrybutu --mode podawanego w package.json przy skrypcie uruchomieniowym
   const isDevMode = !(argv.hasOwnProperty('mode') && argv.mode === 'production')
