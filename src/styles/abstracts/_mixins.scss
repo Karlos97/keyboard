@@ -6,7 +6,10 @@
 @mixin buttons_features {
   height: 100%;
   background-color: $buttons-color;
-  margin: .5rem;
-  // float: left;
+  margin: 0.5rem;
   border-radius: 0.5rem;
+  color: $buttons-color;
+  font-size: $font-size;
+  border-style: solid;
+  border-width: thin;
 }

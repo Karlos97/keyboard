@@ -2,38 +2,31 @@
   position: absolute;
   top: 15rem;
   left: 45rem;
-  height: 50%;
+  height: 60%;
   width: 135rem;
 
   [class^="button--"] {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-justify-content: center;
-align-items: center;
-}
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: $font-color;
+  }
+
   .n {
     @include buttons_features;
     width: calc((1 /#{$max-buttons-in-row}) * 70%);
-    font-size: $font-size;
-    color: $font-color;
   }
   .b {
     @include buttons_features;
     width: calc(((1 /#{$max-buttons-in-row}) * 80%) * 1.5);
     font-size: $font-size + 2rem;
-    color: $font-color;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
   }
   .s {
     @include buttons_features;
     width: 50rem;
-    font-size: $font-size;
-    color: $font-color;
   }
   .row {
     display: flex;
@@ -41,10 +34,8 @@ align-items: center;
     justify-content: center;
     align-items: center;
     .tooltip {
-      position: absolute;
-      // position: relative;
-      // top: -4.8rem;
-      // left: 6.5rem;
+      position: relative;
+      width: 18rem;
       background-color: $tooltip-color;
       color: $font-color;
       font-size: 1.6rem;
@@ -52,11 +43,12 @@ align-items: center;
       padding: 0.5rem;
       border-radius: 0.6rem;
       z-index: 1;
+      left: -5rem;
+      top: -10rem;
     }
     .tooltip::after {
       content: " ";
       position: absolute;
-      // position: relative;
       top: 100%;
       left: 50%;
       margin-left: 0.5rem;
@@ -69,8 +61,9 @@ align-items: center;
       top: 1rem;
       left: 5rem;
       .button-b--arrow {
-        position: absolute;
-        left: 116rem;
+        width: fit-content;
+        height: 100%;
+        transform: translate(9rem, -0.5rem);
       }
     }
     &-2 {
@@ -83,30 +76,27 @@ align-items: center;
       .button {
         &-shift-el {
           &--1 {
-            position: absolute;
-            top: -4.7rem;
-            left: 15rem;
-            transform: rotate(-90deg);
+            transform: translate(5.5rem, 0) rotate(-90deg);
+            width: fit-content;
           }
           &--2 {
-            position: absolute;
-            top: -3.8rem;
-            left: 15rem;
+            transform: translate(5.5rem, -1.5rem);
+            width: fit-content;
+            height: 0;
           }
           &--3 {
             clip-path: circle(50% at 50% 50%);
             width: 1rem;
             height: 1rem;
             position: absolute;
-            top:1.3rem;
-            left: 22rem;
+            top: 1.3rem;
+            left: 21rem;
             background-color: #1ac740;
           }
         }
-        &--e {
-          position: absolute;
-          top: 1rem;
-          left: 122.5rem;
+        &--enter {
+          width: fit-content;
+          transform: translate(11rem, 0.5rem);
         }
       }
     }
@@ -118,10 +108,8 @@ align-items: center;
       @include row_size;
       top: 25rem;
       .button--spacebar {
-        height: 3rem;
-        width: 3rem;
-        transform: translate(24rem, 2rem) rotate(270deg);
-        // transform: rotate(90deg);
+        width: fit-content;
+        transform: translate(25rem, 1.5rem) rotate(270deg);
       }
     }
   }
