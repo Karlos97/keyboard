@@ -13,8 +13,10 @@ export default class keyboard {
       let inValid = /\s/;
       let k = inValid.test(content);
       let asciiCode = `${content}`.charCodeAt(0);
-      if (k) asciiCode = 15;//shift przejawia się linią przerwy
-      if(asciiCode === 91) asciiCode=32
+      if (k) asciiCode = 15;//shift
+      if(asciiCode === 91) asciiCode=32//space
+      if(asciiCode === 8592) asciiCode=8//backspace
+      if(asciiCode === 8629) asciiCode=13//enter
       const bodyRect = document.body.getBoundingClientRect();
       let bodySize = document.body.getBoundingClientRect();
       let div = document.createElement("div");

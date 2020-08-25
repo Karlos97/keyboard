@@ -4,7 +4,6 @@
   left: 45rem;
   height: 60%;
   width: 135rem;
-
   [class^="button--"] {
     height: 100%;
     margin: 0;
@@ -14,7 +13,6 @@
     align-items: center;
     color: $font-color;
   }
-
   .n {
     @include buttons_features;
     width: calc((1 /#{$max-buttons-in-row}) * 70%);
