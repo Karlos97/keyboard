@@ -1,0 +1,114 @@
+.keyboard {
+  position: absolute;
+  top: 15rem;
+  left: 45rem;
+  height: 60%;
+  width: 135rem;
+  [class^="button--"] {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: $font-color;
+  }
+  .n {
+    @include buttons_features;
+    width: calc((1 /#{$max-buttons-in-row}) * 70%);
+  }
+  .b {
+    @include buttons_features;
+    width: calc(((1 /#{$max-buttons-in-row}) * 80%) * 1.5);
+    font-size: $font-size + 2rem;
+  }
+  .s {
+    @include buttons_features;
+    width: 50rem;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .tooltip {
+      position: relative;
+      width: 18rem;
+      background-color: $tooltip-color;
+      color: $font-color;
+      font-size: 1.6rem;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: 0.6rem;
+      z-index: 1;
+      left: -5rem;
+      top: -10rem;
+    }
+    .tooltip::after {
+      content: " ";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: 0.5rem;
+      border-width: 0.7rem;
+      border-style: solid;
+      border-color: $tooltip-color transparent transparent transparent;
+    }
+    &-1 {
+      @include row_size;
+      top: 1rem;
+      left: 5rem;
+      .button-b--arrow {
+        width: fit-content;
+        height: 100%;
+        transform: translate(9rem, -0.5rem);
+      }
+    }
+    &-2 {
+      @include row_size;
+      top: 7rem;
+    }
+    &-3 {
+      @include row_size;
+      top: 13rem;
+      .button {
+        &-shift-el {
+          &--1 {
+            transform: translate(5.5rem, 0) rotate(-90deg);
+            width: fit-content;
+          }
+          &--2 {
+            transform: translate(5.5rem, -1.5rem);
+            width: fit-content;
+            height: 0;
+          }
+          &--3 {
+            clip-path: circle(50% at 50% 50%);
+            width: 1rem;
+            height: 1rem;
+            position: absolute;
+            top: 1.3rem;
+            left: 21rem;
+            background-color: #a4b9a9;
+          }
+        }
+        &--enter {
+          width: fit-content;
+          transform: translate(11rem, 0.5rem);
+        }
+      }
+    }
+    &-4 {
+      @include row_size;
+      top: 19rem;
+    }
+    &-5 {
+      @include row_size;
+      top: 25rem;
+      .button--spacebar {
+        width: fit-content;
+        transform: translate(25rem, 1.5rem) rotate(270deg);
+      }
+    }
+  }
+}
