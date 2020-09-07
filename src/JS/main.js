@@ -90,8 +90,9 @@ objects.buttons.forEach((btn) => {
   });
 });
 document.addEventListener("keydown", (event) => {
-  console.log(key);
-  searchingPath(event.key, event.type);
+  console.log(event.key);
+  key = event.key;
+  searchingPath(key, event.type);
   const kbButton = new keyboard(path, path.getBoundingClientRect(), key);
   kbButton.createTooltip();
   path.style.color = objects.yellow;
