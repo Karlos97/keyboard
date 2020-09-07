@@ -2,18 +2,21 @@ var path = require("path");
 var htmlWebpackPlugin = require("html-webpack-plugin");
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
 module.exports = (env, argv) => {
   const isDevMode = !(
     argv.hasOwnProperty("mode") && argv.mode === "production"
   );
+
   const mode = process.env.NODE_ENV === "production" ? "prod" : "dev";
-  const distPath = "dist";
+  const docsPath = "docs";
+
   return {
     entry: {
       name: "./src/index.js",
     },
     output: {
-      path: path.resolve(__dirname, distPath),
+      path: path.resolve(__dirname, docsPath),
       filename: "[name].[hash].js",
     },
     resolve: {
@@ -26,9 +29,11 @@ module.exports = (env, argv) => {
         template: "./src/index.html",
         filename: "index.html",
       }),
+
       new MiniCssExtractPlugin({
         filename: "[name].[hash].css",
       }),
+
       new CleanWebpackPlugin(),
     ],
     module: {
@@ -103,7 +108,7 @@ module.exports = (env, argv) => {
       ],
     },
     devServer: {
-      contentBase: path.join(__dirname, distPath),
+      contentBase: path.join(__dirname, docsPath),
       compress: true,
       port: 9001,
     },
