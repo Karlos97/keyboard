@@ -1,7 +1,7 @@
 .keyboard {
   position: absolute;
   top: 15rem;
-  left: 45rem;
+  left: 30rem;
   height: 60%;
   width: 135rem;
   [class^="button--"] {
@@ -57,7 +57,7 @@
     &-1 {
       @include row_size;
       top: 1rem;
-      left: 5rem;
+      left: .3rem;
       .button-b--arrow {
         width: fit-content;
         height: 100%;
